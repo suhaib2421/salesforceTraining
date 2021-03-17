@@ -10,3 +10,9 @@ public with sharing class OlderAccountsUtility {
        update oldAccounts;
     }
 }
+
+
+// In developer console:
+// select debug and Open Execute Anonymous Window
+// type OlderAccountsUtility.updateOlderAccounts();
+// above code will update the accounts
