@@ -10,3 +10,10 @@ System.debug('Hello World!');
 System.debug('My name is ' + tempvar);
 
 EmailManager.sendMail('suhaibshaikh87@gmail.com', 'Trailhead Tutorial', '123 body');
+
+Account acct = new Account(
+    Name='Test Account 2',
+    Phone='(415)555-8989',
+    NumberOfEmployees=50,
+    BillingCity='San Francisco');
+insert acct;
