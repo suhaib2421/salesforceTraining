@@ -60,7 +60,7 @@ Contact thisContact = new Contact(
     Email = 'briandent@trailhead.com');
 insert thisContact;
 
-List<List<sObject>> searchList = [FIND 'Crisis' IN ALL FIELDS 
+List<List<sObject>> searchList = [FIND 'Mission Control' IN ALL FIELDS 
                                   RETURNING Contact(FirstName, LastName,
                                   Phone, Email, Description)];
 Contact[] searchContacts = (Contact[])searchList[0];

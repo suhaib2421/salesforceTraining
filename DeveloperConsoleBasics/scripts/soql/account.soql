@@ -12,3 +12,5 @@ Contact[] theseContacts = [SELECT Name, Phone, Email, Description FROM Contact
 System.debug(theseContacts.size() + ' contact(s) returned.');
 // Log all values in the array of contacts
 System.debug(theseContacts);
+
+
