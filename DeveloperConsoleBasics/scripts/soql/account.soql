@@ -1,0 +1,14 @@
+// Use .soql files to store SOQL queries.
+// You can execute queries in VS Code by selecting the
+//     query text and running the command:
+//     SFDX: Execute SOQL Query with Currently Selected Text
+
+SELECT Id, Name FROM Account
+
+Contact[] theseContacts = [SELECT Name, Phone, Email, Description FROM Contact
+                           WHERE (Department='Specialty Crisis Management')
+                           ORDER BY Name];
+// Log a count of how many contacts were found
+System.debug(theseContacts.size() + ' contact(s) returned.');
+// Log all values in the array of contacts
+System.debug(theseContacts);
