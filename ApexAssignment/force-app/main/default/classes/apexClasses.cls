@@ -35,13 +35,31 @@ public with sharing class apexClasses {
 
     // Problem 4:
     // All accounts that have a related contact whose lastname starts with 'smith'
-    // public static List<Account> relatedSmith(Id acctID) {
+    public static List<Account> relatedSmith() {
 
-    //     Account[] acct = [SELECT Id FROM Account where ];
+        Account[] acct = [SELECT Name, (SELECT LastName FROM Contacts where LastName like '%Rogers') FROM Account];
 
-    //     System.debug(acct);
-    //     return acct;
-    // }
+        return acct;
+    }
+
+
+    // Problem 6:
+    // A count of leads by leadsource
+    public static Map<String,Integer> leadCount() {
+
+        List<Lead> l = [SELECT LeadSource FROM Lead];
+
+        Map<String,Integer> countOfLeads = new Map<String,Integer>();
+        for(Lead key : l) {
+            if(!countOfLeads.containsKey(key.LeadSource)) {
+                countOfLeads.put(key.LeadSource, 0);
+            }
+
+            Integer count = countOfLeads.get(key.LeadSource) + 1;
+            countOfLeads.put(key.LeadSource, count);
+        }
+        
+        return countOfLeads;
+    }
 
 }
-
